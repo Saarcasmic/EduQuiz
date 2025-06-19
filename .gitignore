@@ -1,0 +1,65 @@
+# Node.js
+client/node_modules/
+client/.env
+client/.env.*
+client/dist/
+client/.next/
+client/.cache/
+client/coverage/
+client/.vite/
+client/.vite-temp/
+client/.eslintcache
+
+# Python
+server/venv/
+server/.env
+server/.env.*
+server/__pycache__/
+server/.pytest_cache/
+server/.mypy_cache/
+server/.pylint.d/
+server/*.pyc
+server/*.pyo
+server/*.pyd
+server/*.egg-info/
+server/*.egg
+server/.coverage
+server/coverage.xml
+server/htmlcov/
+
+# General Python cache
+**/__pycache__/
+**/*.pyc
+**/*.pyo
+**/*.pyd
+
+# Test cache
+**/.pytest_cache/
+**/.mypy_cache/
+**/.pylint.d/
+**/.coverage
+**/coverage.xml
+**/htmlcov/
+
+# Editor/OS
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Logs
+*.log
+
+# Misc
+*.swp
+*.swo
+
+# Ignore build/test artifacts in root/tests
+.pytest_cache/
+*.egg-info/
+*.egg
+*.log
+
+# Ignore environment files
+.env
+.env.*
