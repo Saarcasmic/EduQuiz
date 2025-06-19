@@ -20,7 +20,12 @@ SUPABASE_KEY = os.getenv('SUPABASE_KEY')
 app = Flask(__name__)
 CORS(app, resources={
     r"/*": {
-        "origins": ["http://localhost:5173","https://edu-quiz-psi.vercel.app/"],  # React dev server
+        "origins": [
+            "http://localhost:5173",  # Local development
+            "https://edu-quiz-psi.vercel.app",  # Your Vercel domain
+            "https://edu-quiz-git-master-dharmawarriors-projects.vercel.app",   # Alternative Vercel domain
+            # "*"  # For development - remove in production
+        ],
         "methods": ["GET", "POST", "OPTIONS"],
         "allow_headers": ["Content-Type", "Authorization"]
     }
