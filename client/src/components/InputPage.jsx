@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useNavigate } from "react-router-dom";
+import api from "../api";
 
 const MIN_LENGTH = 50;
 const MAX_LENGTH = 5000;
@@ -39,7 +39,7 @@ export default function InputPage() {
     setApiError(null);
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/generate-quiz`, {
+      const response = await api.post(`/generate-quiz`, {
         text: lectureNotes,
       });
       setIsLoading(false);

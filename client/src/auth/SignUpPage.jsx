@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import { Brain, Eye, EyeOff, Mail, Lock, User, ArrowLeft, Loader2 } from 'lucide-react';
-import axios from 'axios';
+import api from '../api';
 import { useAuth } from '../context/AuthContext';
 
 const SignUpPage = () => {
@@ -74,10 +74,10 @@ const SignUpPage = () => {
     }
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signup`, {
+      const response = await api.post(`/auth/signup`, {
         email: formData.email,
         password: formData.password
-      });
+      }); 
 
       // If the backend returns a token and user, log in immediately
       if (response.data.access_token && response.data.user) {

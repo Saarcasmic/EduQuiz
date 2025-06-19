@@ -17,7 +17,7 @@ export default function QuizDisplayPage() {
           <p className="text-gray-600 mb-6 text-center">Please generate a quiz from the home page.</p>
           <button
             className="bg-blue-600 hover:bg-blue-700 text-white font-bold py-2 px-6 rounded-lg shadow-md transition-all duration-200"
-            onClick={() => navigate("/")}
+            onClick={() => navigate("/input")}
           >
             Go Home
           </button>

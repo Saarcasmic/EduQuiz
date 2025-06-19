@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Brain, Eye, EyeOff, Mail, Lock, ArrowLeft, Loader2 } from 'lucide-react';
 import axios from 'axios';
 import { useAuth } from '../context/AuthContext';
+import api from '../api';
 
 const SignInPage = () => {
   const navigate = useNavigate();
@@ -40,10 +41,10 @@ const SignInPage = () => {
     }
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/auth/signin`, {
+      const response = await api.post(`/auth/signin`, {
         email: formData.email,
         password: formData.password
-      });
+      }); 
 
       // Use context login function
       login(response.data.access_token, response.data.user);
