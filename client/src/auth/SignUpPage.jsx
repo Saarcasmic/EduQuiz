@@ -186,20 +186,7 @@ const SignUpPage = () => {
               </motion.div>
             )}
 
-            {/* Social Sign Up Buttons */}
             
-
-            {/* Divider */}
-            <motion.div className="mt-6" variants={fadeInUp}>
-              <div className="relative">
-                <div className="absolute inset-0 flex items-center">
-                  <div className="w-full border-t border-gray-300" />
-                </div>
-                <div className="relative flex justify-center text-sm">
-                  <span className="px-2 bg-white text-gray-500">Or create account with email</span>
-                </div>
-              </div>
-            </motion.div>
 
             {/* Sign Up Form */}
             <motion.form className="mt-6 space-y-6" onSubmit={handleSubmit} variants={fadeInUp}>
