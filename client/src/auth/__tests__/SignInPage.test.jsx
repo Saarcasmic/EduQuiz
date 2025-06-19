@@ -6,7 +6,8 @@ import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 import { AuthProvider } from '../../context/AuthContext';
 
-vi.mock('axios');
+// Mock the environment variable
+vi.stubEnv('VITE_BACKEND_URL', 'http://localhost:5000');
 
 // Move mockNavigate and vi.mock to top-level
 const mockNavigate = vi.fn();
@@ -70,7 +71,7 @@ describe('SignInPage', () => {
     fireEvent.click(button);
     await waitFor(() => {
       expect(axios.post).toHaveBeenCalledWith(
-        'http://localhost:5000/auth/signin',
+        `${import.meta.env.VITE_BACKEND_URL}/auth/signin`,
         { email: 'user@example.com', password: 'password123' }
       );
       expect(mockNavigate).toHaveBeenCalledWith('/input');

@@ -5,6 +5,9 @@ import { vi } from 'vitest';
 import { BrowserRouter } from 'react-router-dom';
 import axios from 'axios';
 
+// Mock the environment variable
+vi.stubEnv('VITE_BACKEND_URL', 'http://localhost:5000');
+
 vi.mock('axios');
 
 // Mock useNavigate
@@ -65,7 +68,7 @@ describe('InputPage', () => {
     fireEvent.click(button);
     await waitFor(() => {
       expect(axios.post).toHaveBeenCalledWith(
-        'http://localhost:5000/generate-quiz',
+        `${import.meta.env.VITE_BACKEND_URL}/generate-quiz`,
         { text: 'Some notes that are definitely more than fifty characters long for testing.' }
       );
       expect(mockNavigate).toHaveBeenCalledWith('/quiz', expect.anything());

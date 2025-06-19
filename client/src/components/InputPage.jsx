@@ -39,7 +39,7 @@ export default function InputPage() {
     setApiError(null);
 
     try {
-      const response = await axios.post("http://localhost:5000/generate-quiz", {
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/generate-quiz`, {
         text: lectureNotes,
       });
       setIsLoading(false);
